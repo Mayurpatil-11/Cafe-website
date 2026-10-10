@@ -1555,11 +1555,10 @@ h3 {
 @media (max-width: 650px) {
 
   .container {
-    width:
-      min(
-        var(--container),
-        calc(100% - 28px)
-      );
+    width: min(
+      var(--container),
+      calc(100% - 28px)
+    );
   }
 
   .section {
@@ -1575,12 +1574,11 @@ h3 {
   }
 
   h1 {
-    font-size:
-      clamp(
-        2.8rem,
-        14vw,
-        4.4rem
-      );
+    font-size: clamp(
+      2.8rem,
+      14vw,
+      4.4rem
+    );
   }
 
   .hero-actions .btn {
@@ -1595,20 +1593,30 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  /* GALLERY - MOBILE */
   .gallery-grid {
-    grid-template-columns: 1fr 1fr;
-
-    grid-auto-rows: 190px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: auto;
+    gap: 15px;
   }
 
-  .gallery-large {
-    grid-row: span 2;
+  .gallery-item.gallery-large,
+  .gallery-grid > .gallery-item:nth-child(2),
+  .gallery-grid > .gallery-item:nth-child(3),
+  .gallery-grid > .gallery-item:nth-child(4) {
+    grid-column: 1;
+    grid-row: auto;
+    height: 300px;
   }
 
-  .gallery-wide {
-    grid-column: span 2;
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
+  /* REVIEWS */
   .rating-layout {
     padding: 25px 18px;
   }
@@ -1621,13 +1629,14 @@ h3 {
     display: none;
   }
 
+  /* CONTACT FORM */
   .form-card {
     padding: 25px 20px;
   }
 
+  /* FOOTER */
   .footer-grid {
     grid-template-columns: 1fr;
-
     gap: 35px;
   }
 
